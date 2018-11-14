@@ -1,0 +1,26 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;;
+    background-repeat: no-repeat;
+    
+}
+
+#img1 {
+    padding-left: 45%;
+}
+
+.l1 {
+
+    padding-left: 2cm;
+}
+.line{
+    border-bottom: 1px solid #ebebeb;
+}
+
+.space {
+    border-bottom: 1px solid black;
+
+}
