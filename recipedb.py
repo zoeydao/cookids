@@ -4,7 +4,7 @@ class Search(Document):
     keyword = ListField()
 
 class Recipe(Document):
-    recipe_name = StringField()
+    # recipe_name = StringField()
     ingredients = (ListField(DictField()))
     steps = (ListField(DictField()))
     # step-count = IntField()

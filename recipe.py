@@ -32,14 +32,16 @@ for item in list_of_a:
 
 ingredients = []
 d={}
+steps_list = []
+s={}
 for item in link_list:
     try:
         item_url = urlopen(item)
         raw = item_url.read()
         web_text =  raw.decode("utf-8")
         recipe_soup = BeautifulSoup(web_text,"html.parser")
-        recipe_name = recipe_soup.find("div","recipe-type")
-        print(recipe_name)
+        # recipe_name = recipe_soup.find("div","recipe-type")
+        # print(recipe_name)
         recipe_ingredient = recipe_soup.find('ul', 'list-inline recipe-ingredient-list')
         ingredient_list = recipe_ingredient.find_all("li","ingredient")    
         for item in ingredient_list:
@@ -50,7 +52,18 @@ for item in link_list:
             d["amount"]=amount
             d["unit"]=unit
             ingredients.append(d.copy())
-        i=Recipe(recipe_name=recipe_name,ingredients=ingredients)
+        steps_area = recipe_soup.find("div", id="accordionDirection")
+        steps = steps_area.find_all("div", "panel panel-default clearfix")
+        for item in steps:
+            step_text = item.find("div", "step-desc").string
+            step_image = item.find("div", "step-photos").a.img["data-src"]
+            s["text"] = step_text
+            s["image"] = step_image
+            
+            steps_list.append(s.copy())
+        
+
+        i=Recipe(ingredients=ingredients,steps=steps_list)
         i.save()
     except:
         pass
