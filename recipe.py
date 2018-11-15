@@ -51,6 +51,7 @@ for item in link_list:
             d["name"]=name
             d["amount"]=amount
             d["unit"]=unit
+            ingredients =[]
             ingredients.append(d.copy())
         steps_area = recipe_soup.find("div", id="accordionDirection")
         steps = steps_area.find_all("div", "panel panel-default clearfix")
@@ -59,14 +60,16 @@ for item in link_list:
             step_image = item.find("div", "step-photos").a.img["data-src"]
             s["text"] = step_text
             s["image"] = step_image
-            
+            steps_list=[]
             steps_list.append(s.copy())
         
-
         i=Recipe(ingredients=ingredients,steps=steps_list)
         i.save()
+       
     except:
         pass
+# print(ingredients)
+# print(steps_list)
 
 # print(ingredients)
 
