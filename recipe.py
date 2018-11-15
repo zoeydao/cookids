@@ -67,7 +67,7 @@ for stepstep in steps:
     step_image = stepstep.find("div", "step-photos").a.img["data-src"]
     print(step_text, step_image)
     print("--------------------------")
-# pyexcel.save_as(records=,dest_file_name="recipe.xlsx")
+pyexcel.save_as(records=,dest_file_name="recipe.xlsx")
 # for item in x:
 #     link = item.a.href
 #     print(link)
