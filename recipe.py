@@ -6,7 +6,7 @@ import mlab
 
 mlab.connect()
 
-url = "https://www.cooky.vn/cach-lam"
+url = "https://www.cooky.vn/directory/search?q=null&st=2&lv=&cs=&cm=&dt=&igt=&oc=&p=&crs=&page=1&pageSize=12&append=true&video=false"
 
 #1.1 Connect to website
 conn = urlopen(url)
@@ -20,13 +20,17 @@ webpage_text =  raw_data.decode("utf-8")
 # #2. Extract ROI (Region of interest)
 # #2.1 Convert text to soup (cat text thanh html)
 soup = BeautifulSoup(webpage_text,"html.parser")
-list_of_a = soup.find_all("div","item-photo")
+recipes= soup.find_all("span")
+recipes= 
+print(recipes)
+# list_of_a = soup.find_all("div","item-photo")
 # links = list_of_a[0].a["href"] #ap dung cho attribute, . chi ap dung cho the
 
 link_list = []
 for item in list_of_a:
     link = item.a["href"]
     link_list.append("https://www.cooky.vn"+link)
+
 
 #crawl từ từng href lấy ra {name, ingredients, image-link, duration, difficulty, step-image, step-description}
 
@@ -38,8 +42,6 @@ for item in link_list:
         raw = item_url.read()
         web_text =  raw.decode("utf-8")
         recipe_soup = BeautifulSoup(web_text,"html.parser")
-        recipe_name = recipe_soup.find("div","recipe-type")
-        print(recipe_name)
         recipe_ingredient = recipe_soup.find('ul', 'list-inline recipe-ingredient-list')
         ingredient_list = recipe_ingredient.find_all("li","ingredient")    
         for item in ingredient_list:
