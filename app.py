@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 from recipedb import Recipe
 import mlab
@@ -13,8 +13,21 @@ def recipefinder():
   elif request.method == "POST":
     form = request.form
     keyword = form["search"]
-    keyword = keyword.split(",")
-    return "ok"
+    return redirect(url_for("result",keyword=keyword))
+    
+@app.route("/result/<keyword>")
+def result(keyword):
+  keyword = keyword.split(",")
+  #compare function
+  recipes = Recipe.objects()
+  recipe_documents = []
+  for item in keyword:
+    ingre = item.capitalize()
+    for recipe in recipes:
+      if ingre in recipe.ingredients_name:
+          recipe_documents.append(recipe)
+  return render_template("result_p2.html")
+
 
 if __name__ == '__main__':
   app.run(debug=True)
