@@ -6,22 +6,6 @@ html, body {
     font-family: 'Patrick Hand', cursive;
 }
 
-input[type=text] {
-    width: 400px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 600PX;
-}
-
-
 #root {
     width: 100%;
     height: 100%;
@@ -34,9 +18,35 @@ input[type=text]:focus {
     background-size: 100% 100%;
 }
 
+input    {
+    width: 400px;
+    box-sizing: border-box;
+       border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 600PX;
+}
+
+button {
+    font-size: 17px;
+    float: right;
+    height: 50px;
+    width: 40px;
+    border: none;
+    background :#ddd;
+    cursor: pointer;
+}
+
+
 h1 {
     color: aliceblue;
-    height: 10PX;
+    height: 20PX;
     justify-content: center;
     align-items: center;
 }
@@ -52,18 +62,18 @@ h3 {
     background: none;
     max-width: 900px;
     max-height: 300px;
-    margin: 20px ;
+    /* margin: 10px ; */
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .item {
     margin: 5px;
-    height: 50px;
+    height: 15px;
     text-align: center;
-    line-height: 50px;
-    width: 100px;
+    line-height: 15px;
+    width: 80px;
     color: #ccc;
     border: 1px solid white;
     border-radius: 5px;

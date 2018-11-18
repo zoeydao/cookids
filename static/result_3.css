@@ -1,0 +1,56 @@
+html, body {
+    height: 100%;
+}
+
+*{
+    font-family: 'Patrick Hand', cursive;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/94/8957930841b2cc6.jpg");
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+.item {
+    background: white;
+    margin: 20px;
+    height: 300px;
+    width: 95%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.search {
+    height: 100px;
+    width: 95%;
+    margin: 20px;
+    border: 1px  solid black;
+    background: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+H1 {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+select {
+    height: 40px;
+    width: 150px;
+    margin: 30px;
+}
+
+h2 {
+    margin: 120px 20px;
+}
+
+img {
+    margin: 10px;
+}
