@@ -9,7 +9,9 @@
     <title>Result page</title>
 </head>
 <body>
-    
+    {% for recipe in recipe_documents %}
+    <a href="{{ url_for('display',id=recipe.id) }}">{{ recipe.recipe_name }}</a>
+    {% endfor %}
     <div id = "root">
         <h3>Kết quả tìm kiếm</h3>
         <select name="choice" >
