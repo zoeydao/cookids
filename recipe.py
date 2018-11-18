@@ -3,86 +3,64 @@ from bs4 import BeautifulSoup
 import pyexcel
 from recipedb import Recipe
 import mlab
+import requests
 
 mlab.connect()
 
-url = "https://www.cooky.vn/directory/search?q=null&st=2&lv=&cs=&cm=&dt=&igt=&oc=&p=&crs=&page=1&pageSize=12&append=true&video=false"
-
-#1.1 Connect to website
-conn = urlopen(url)
-
-#1.2 Download raw data
-raw_data = conn.read()
-
-#1.3 Decode data
-webpage_text =  raw_data.decode("utf-8")
-
-# #2. Extract ROI (Region of interest)
-# #2.1 Convert text to soup (cat text thanh html)
-soup = BeautifulSoup(webpage_text,"html.parser")
-recipes= soup.find_all("span")
-recipes= 
-print(recipes)
-# list_of_a = soup.find_all("div","item-photo")
-# links = list_of_a[0].a["href"] #ap dung cho attribute, . chi ap dung cho the
-
-link_list = []
-for item in list_of_a:
-    link = item.a["href"]
-    link_list.append("https://www.cooky.vn"+link)
-
-
-#crawl từ từng href lấy ra {name, ingredients, image-link, duration, difficulty, step-image, step-description}
-
-ingredients = []
-d={}
-for item in link_list:
+for n in range(1,1000):
+    data = requests.get("https://www.cooky.vn/directory/search?q=null&st=2&lv=&cs=&cm=&dt=&igt=&oc=&p=&crs=&page="+ str(n) + "&pageSize=12&append=true&video=false").json()
+    url = str("https://www.cooky.vn") + data["recipes"][1]["DetailUrl"]
+    ingredients = []
+    d={}
+    steps_list = []
+    s={}
+    ingredients_name = []
     try:
-        item_url = urlopen(item)
+        item_url = urlopen(url)
         raw = item_url.read()
         web_text =  raw.decode("utf-8")
         recipe_soup = BeautifulSoup(web_text,"html.parser")
+        #get name
+        name_list = recipe_soup.find("h1","p-name fn recipe-title ")
+        recipe_name = name_list.string
+        #get image
+        image_list = recipe_soup.find("div", "recipe-header-photo")
+        recipe_image = image_list.img["src"]
+        #get ingredients
         recipe_ingredient = recipe_soup.find('ul', 'list-inline recipe-ingredient-list')
         ingredient_list = recipe_ingredient.find_all("li","ingredient")    
         for item in ingredient_list:
             name = item.find("span", "name").string
             amount = item.find("span", "ingredient-quality").string
+            amount = amount.replace("<sup>","").replace("</sup>","").replace("<sub>","").replace("</sub>","").strip()
             unit = item.find("span","ingredient-unit").string
             d["name"]=name
             d["amount"]=amount
             d["unit"]=unit
+            ingredients_name.append(name)
             ingredients.append(d.copy())
-        i=Recipe(recipe_name=recipe_name,ingredients=ingredients)
+        #get steps
+        steps_area = recipe_soup.find("div", id="accordionDirection")
+        steps = steps_area.find_all("div", "panel panel-default clearfix")
+        for item in steps:
+            step_text = item.find("div", "step-desc").string
+            step_image = item.find("div", "step-photos").a.img["data-src"]
+            s["text"] = step_text
+            s["image"] = step_image
+            steps_list.append(s.copy())
+        #get duration:
+        duration_list = recipe_soup.find("span","value-title")["title"]
+        duration = duration_list.replace("PT","")
+        #get number of ingredients:
+        ingredient_count = len(ingredients)
+        #get level:
+        ul = recipe_soup.find("ul","list-inline nomargin nopadding")
+        list_of_li = ul.find_all("li")
+        level = list_of_li[3].find("b","stats-count").string
+        #save to DB:
+        i=Recipe(recipe_name=recipe_name,recipe_image=recipe_image,ingredients=ingredients,steps=steps_list,duration=duration,level=level,ingredient_count=ingredient_count,ingredients_name=ingredients_name)
         i.save()
+       
     except:
         pass
-
-# print(ingredients)
-
-# # for li in li_list:
-# #     title = li.find("span", "stats-text").string
-# #     ingre = li.find("b", "stats-count").string
-# #     if ingre is None:
-# #         ingre = li.find("b", "stats-count").time.string
-# #     print(title, ingre)
-    
-# # image = soup.find("div", id="recipe-header-photo-container").img["src"]
-# # print(image)
-
-# # steps_area = soup.find("div", id="accordionDirection")
-# # steps = steps_area.find_all("div", "panel panel-default clearfix")
-# # # print(len(step))
-# # # print(steps.prettify())
-# # for stepstep in steps:
-# #     step_text = stepstep.find("div", "step-desc").string
-# #     step_image = stepstep.find("div", "step-photos").a.img["data-src"]
-# #     print(step_text, step_image)
-# #     print("--------------------------")
-
-# for item in ingredients:
-#     ingre = item.string
-#     ingredient_list.append(ingre)
-# print (ingredient_list)
-# name_list = content2.find("span","name")
-
 
