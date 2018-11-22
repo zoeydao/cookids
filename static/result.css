@@ -5,10 +5,12 @@ html, body {
     font-size: 1.1rem;
 }
 #root {
-    width: 50%;
-    display: flex;
+    width: 30%;
     justify-content: flex-start;
-    align-items: center;
 }
 .result {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
