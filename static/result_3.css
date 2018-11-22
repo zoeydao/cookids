@@ -1,5 +1,7 @@
-html, body {
-    height: 100%;
+body {
+    background-image: url("https://static1.squarespace.com/static/54aed706e4b060149458bc7f/t/5970fad1cd0f68cb4b70c700/1500576468197/NU-Food-Background.jpg?format=2500w");
+    background-size: 100%;
+    background-repeat: repeat-y;
 }
 
 *{
@@ -11,46 +13,59 @@ html, body {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/94/8957930841b2cc6.jpg");
-    background-size: 100%;
-    background-repeat: repeat-y;
 }
 
-.item {
-    background: white;
-    margin: 20px;
-    height: 300px;
+.title {
     width: 95%;
-    border: 1px solid black;
+    height: 200px;
     display: flex;
-    flex-wrap: nowrap;
-}
-
-.search {
-    height: 100px;
-    width: 95%;
-    margin: 20px;
-    border: 1px  solid black;
-    background: white;
-    display: flex;
-    flex-wrap: nowrap;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 H1 {
-    margin-top: 30px;
-    margin-left: 30px;
+    color: white;
 }
 
-select {
-    height: 40px;
-    width: 150px;
-    margin: 30px;
+.item {
+    margin: 20px;
+    height: 300px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-h2 {
-    margin: 120px 20px;
+.name {
+    width: 20%;
+    height: 300px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+h3{
+    color: #f1f1f1;
 }
 
 img {
-    margin: 10px;
+    height: 300px;
+
+}
+
+.content {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 800px;
+    margin-left: 10px;
 }

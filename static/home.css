@@ -3,7 +3,7 @@ html, body {
 }
 
 *{
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Ranga', cursive;
 }
 
 #root {
@@ -18,12 +18,30 @@ html, body {
     background-size: 100% 100%;
 }
 
+h1 {
+    color: aliceblue;
+    height: 20PX;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    color: aliceblue;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
 input    {
     width: 400px;
     box-sizing: border-box;
-       border: 2px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
+    background-color: white;
+    background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjt_5HTkOXeAhUCebwKHRdKAysQjRx6BAgBEAU&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F3498393%2Fcutlery_dish_with_fork_knife_plate_restaurant_spoon_icon&psig=AOvVaw2xtHbRBrvYQw7e9VcF0Lsk&ust=1542877384604914") ;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
@@ -41,21 +59,8 @@ button {
     border: none;
     background :#ddd;
     cursor: pointer;
-}
+    padding: 10PX;
 
-
-h1 {
-    color: aliceblue;
-    height: 20PX;
-    justify-content: center;
-    align-items: center;
-}
-
-h3 {
-    color: aliceblue;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {

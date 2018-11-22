@@ -10,23 +10,27 @@
 </head>
 <body>
     <div class="container">
-        <div class="search">
-            <H1> Kết quả tìm kiếm </H1>
-            <select name="" id="choice">
-                <option value="accutacy">accutacy</option>
-                <option value="level">level</option>
-                <option value="a2z">A-Z</option>
-            </select>
+        <div class="title">
+            <H1> Result </H1>
         </div>
+        {% for recipe in recipe_documents %}
         <div class="item">
-            <h2>1</h2>
-            <img src="" alt=""> 
-            <div id="description">
-                <p>Level</p>
-                <p>duration</p>
-                <p>steps</p>
+            <div class="name">
+                <a href="{{ url_for('display',id=recipe.id) }}"><h3>{{ recipe.recipe_name }}</h3> </a>
+            </div>
+            <div class="img">
+                <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
+            </div>
+            <div class="description">
+                <div class="content">
+                    <p> Duration : {{ recipe.duration }}</p>
+                    <p> Level : {{ recipe.level }}</p>
+                    <p> Quantity : {{ recipe.ingredient_count }}</p>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
+    
 </body>
 </html>
