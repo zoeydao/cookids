@@ -27,4 +27,18 @@ body {
     font-family: 'Lobster', cursive;
     border-bottom: 1px dotted rgba(255, 0, 55, 0.356);
 }
+<<<<<<< HEAD
+.another {
+    font-family: 'Archivo', sans-serif;
+    height: 300px;
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color:blanchedalmond;
+    margin: 8px;
+}
+=======
 
+>>>>>>> 9287ce05c2bed31078ebca5418cffded9916b968
