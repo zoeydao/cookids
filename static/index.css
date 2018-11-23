@@ -29,7 +29,6 @@ body {
 }
 .another {
     font-family: 'Archivo', sans-serif;
-    background-color: black;
     height: 300px;
     width: 95%;
     display: flex;
