@@ -1,7 +1,8 @@
-body {
+body, html {
     background-image: url("https://static1.squarespace.com/static/54aed706e4b060149458bc7f/t/5970fad1cd0f68cb4b70c700/1500576468197/NU-Food-Background.jpg?format=2500w");
     background-size: 100%;
     background-repeat: repeat-y;
+
 }
 
 *{
