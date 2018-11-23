@@ -6,6 +6,7 @@ body, html {
 
 * {
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -22,7 +23,6 @@ body, html {
     background-color: rgba(0,0,0, 0.4);
   }
 .topnav a {
-    font-family: 'Dancing Script', cursive;
     float: left;
     display: block;
     color:  white;
@@ -49,28 +49,6 @@ body, html {
     border: 1px solid white;
     border-radius: 5px;
 }
-<<<<<<< HEAD
-.container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.another {
-    margin-top: 50px;
-    font-family: 'Archivo', sans-serif;
-    height: 300px;
-    width: 100%;
-    height: 100%;
-    flex-wrap: nowrap;
-    margin-left: 8px;
-    margin-right: 8px;
-    
-}
-#buoc {
-    width: 10%;
-    height: 100%;
-=======
   
 .topnav .search-container button {
     float: right;
@@ -93,7 +71,6 @@ i{
 .title {
     width: 95%;
     height: 200px;
->>>>>>> 7db33ac5107f281d916c51668ec9261a4627942a
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -105,15 +82,6 @@ i{
     justify-content: center;
     align-items: center;
 }
-<<<<<<< HEAD
-.line {
-    width: 55%;
-    height: 95%;
-    justify-content: flex-start;
-    align-items: center;
-    clear: right;
-}
-=======
 
 .description{
     margin: 20px 20px 50px 20px;
@@ -149,7 +117,6 @@ i{
 }
 
 .another {
-    font-family: 'Archivo', sans-serif;
     height: 80%;
     width: 100%;
     float: left; 
@@ -182,4 +149,3 @@ i{
 .active, .accordion:hover {
     background-color: #ccc; 
 }   
->>>>>>> 7db33ac5107f281d916c51668ec9261a4627942a

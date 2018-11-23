@@ -5,7 +5,7 @@ body {
 }
 
 *{
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -22,7 +22,6 @@ body {
     background-color: rgba(0,0,0, 0.4);
   }
 .topnav a {
-    font-family: 'Dancing Script', cursive;
     float: left;
     display: block;
     color:  white;
@@ -94,7 +93,13 @@ H1 {
     height: 300px;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4);
 }
 
 h3{
@@ -113,12 +118,19 @@ img {
     background-color: rgba(0,0,0, 0.4); 
     color: white;
     font-weight: bold;
+    height: 300px;
+    width: 800px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    border: 1px solid  rgba(0,0,0, 0.4);;
-    border-radius: 10px;
+    justify-content: space-around;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
+
+.Ingredients {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    
+}
