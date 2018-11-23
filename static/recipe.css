@@ -30,3 +30,15 @@ body, html {
 #ing_r{
 
 }
+.another {
+    font-family: 'Archivo', sans-serif;
+    background-color: black;
+    height: 300px;
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color:blanchedalmond;
+    margin: 8px;
+}
