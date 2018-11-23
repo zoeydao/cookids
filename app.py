@@ -33,10 +33,15 @@ def result(keyword):
     keyword = form["search"]
     return redirect(url_for("result",keyword=keyword))
 
-@app.route("/<id>")
+@app.route("/<id>", methods = ["GET","POST"])
 def display(id):
-  recipe_details = Recipe.objects.with_id(id)
-  return render_template("recipie.html",recipe_details=recipe_details)
-  
+  if request.method == "GET":
+    recipe_details = Recipe.objects.with_id(id)
+    return render_template("recipie.html",recipe_details=recipe_details)
+  elif request.method == "POST":
+    form = request.form
+    keyword = form["search"]
+    return redirect(url_for("result",keyword=keyword))
+
 if __name__ == '__main__':
   app.run(debug=True)
