@@ -30,15 +30,41 @@ body, html {
 #ing_r{
 
 }
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 .another {
+    margin-top: 50px;
     font-family: 'Archivo', sans-serif;
-    background-color: black;
     height: 300px;
-    width: 95%;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
+    
+}
+#buoc {
+    width: 10%;
+    height: 100%;
     display: flex;
     flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.img {
+    width: 30%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    color:blanchedalmond;
-    margin: 8px;
+}
+.line {
+    width: 55%;
+    height: 95%;
+    justify-content: flex-start;
+    align-items: center;
+    clear: right;
 }

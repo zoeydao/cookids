@@ -4,8 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet"> 
     <link rel="stylesheet" href="../static/recipe.css">
     <title>Recipie</title>
     
@@ -30,13 +32,24 @@
             </h3>
         </ol>
     </div>
-    <div>
+    <div class="root">
         <h3 class="space"><i> Công Thức </i></h3>
+        <div class="container">
         <div class="another">
         {% for item in recipe_details.steps %}
-            <img src = {{ item["image"] }} width="300cm" >
-            <h4 class="line">{{item["text"]}}</h4>
+            <div class="col-sm-1"> 
+            <p class="buoc"> Bước </p>
+            </div>
+            <div class="col-sm-4">
+               <img src = {{ item["image"] }} width="300cm" >
+            </div>
+            <div class="col-sm-7">
+              <h4 class="line">{{item["text"]}}</h4>
+            </div>
+            
+        </div>        
         </div>
+        
             
         {% endfor %}
             
