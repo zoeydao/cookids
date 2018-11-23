@@ -32,13 +32,11 @@
             <a href="{{ url_for('display',id=recipe.id) }}"><h3>{{ recipe.recipe_name }}</h3> </a>
         </div>
         <div class="item">
-            <div class="name">
-                <a href="{{ url_for('display',id=recipe.id) }}"><h3>{{ recipe.recipe_name }}</h3> </a>
-            </div>
-            <div class="img">
+            <div class="col-5" id="img">
                 <a href="{{ url_for('display',id=recipe.id) }}"><img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}"></a>
             </div>
-            <div class="description">
+            
+            <div class="col-7">
                 <div class="content">
                     <ol type= "1">
                         <li><p> Thời gian : {{ recipe.duration }}</p></li>
@@ -55,8 +53,8 @@
                 </div>
                 
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     
 </body>
