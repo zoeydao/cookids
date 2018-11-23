@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../design_css/result.css">
     <title>Result page</title>
 </head>
+
 <body>
     {% for recipe in recipe_documents %}
     <a href="{{ url_for('display',id=recipe.id) }}">{{ recipe.recipe_name }}</a>
@@ -52,4 +53,7 @@
         </nav>
     </div>
 </body>
+<script>
+    
+</script>
 </html>
