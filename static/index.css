@@ -22,3 +22,14 @@ body {
     border-bottom: 1px solid black;
 
 }
+.space {
+    background-color: black;
+    height: 300px;
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color:blanchedalmond;
+    margin: 8px;
+}
