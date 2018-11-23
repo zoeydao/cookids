@@ -33,7 +33,7 @@ h3 {
     align-items: center;
 }
 
-input    {
+input[type=text] {
     width: 400px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -52,7 +52,7 @@ input[type=text]:focus {
     width: 600PX;
 }
 
-button {
+/* button {
     font-size: 17px;
     float: right;
     height: 50px;
@@ -83,4 +83,4 @@ button {
     color: #ccc;
     border: 1px solid white;
     border-radius: 5px;
-}
+} */

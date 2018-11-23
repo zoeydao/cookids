@@ -15,18 +15,23 @@ def recipefinder():
     keyword = form["search"]
     return redirect(url_for("result",keyword=keyword))
     
-@app.route("/result/<keyword>")
+@app.route("/result/<keyword>", methods = ["GET","POST"])
 def result(keyword):
-  keyword = keyword.split(",")
-  #compare function
-  recipes = Recipe.objects()
-  recipe_documents = []
-  for item in keyword:
-    ingre = item.capitalize()
-    for recipe in recipes:
-      if ingre in recipe.ingredients_name:
-        recipe_documents.append(recipe)
-  return render_template("result_3.html", recipe_documents = recipe_documents)
+  if request.method == "GET":
+    keyword = keyword.split(",")
+    #compare function
+    recipes = Recipe.objects()
+    recipe_documents = []
+    for item in keyword:
+      ingre = item.capitalize()
+      for recipe in recipes:
+        if ingre in recipe.ingredients_name:
+          recipe_documents.append(recipe)
+    return render_template("result_3.html", recipe_documents = recipe_documents)
+  elif request.method == "POST":
+    form = request.form
+    keyword = form["search"]
+    return redirect(url_for("result",keyword=keyword))
 
 @app.route("/<id>")
 def display(id):
@@ -34,14 +39,8 @@ def display(id):
   return render_template("recipie.html",recipe_details=recipe_details)
 
 @app.route("/result")
-<<<<<<< HEAD
-def result():
-  return render_template("result.html")
-  
-=======
 def result_1():
   return render_template("result_3.html")
 
->>>>>>> 73e1fdc12ba013fe227d16f0bdd0d7d378f57e78
 if __name__ == '__main__':
   app.run(debug=True)
