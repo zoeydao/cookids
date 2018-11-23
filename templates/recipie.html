@@ -32,9 +32,11 @@
     </div>
     <div>
         <h3 class="space"><i> Công Thức </i></h3>
+        <div class="another">
         {% for item in recipe_details.steps %}
             <img src = {{ item["image"] }} width="300cm" >
             <h4 class="line">{{item["text"]}}</h4>
+        </div>
             
         {% endfor %}
             

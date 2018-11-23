@@ -1,0 +1,41 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;;
+    background-repeat: no-repeat;
+    
+}
+#img {
+    
+}
+
+
+
+
+.line{
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+    
+
+}
+.space {
+    font-size: 2cm;
+    font-family: 'Lobster', cursive;
+    border-bottom: 1px dotted rgba(255, 0, 55, 0.356);
+}
+.another {
+    font-family: 'Archivo', sans-serif;
+    background-color: black;
+    height: 300px;
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color:blanchedalmond;
+    margin: 8px;
+}

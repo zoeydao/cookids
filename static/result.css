@@ -1,5 +1,5 @@
 html, body {
-    background-image: url(https://imgur.com/a/rU3WgCT);
+    
     background-size:100%;
     background-repeat: repeat;
 }
@@ -7,7 +7,7 @@ html, body {
     font-family: 'Taviraj', normal;
 }
 .root{
-    background-color: rgba(238, 56, 86, 0.2);
+    background-image: url(https://i.imgur.com/v1U6BAi.jpg);
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -42,7 +42,6 @@ h1 {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     color: black;
     font: bold;
     margin-left: 8px;
