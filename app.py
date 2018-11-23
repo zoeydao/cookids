@@ -20,7 +20,7 @@ def recipefinder():
     search.save()
     return redirect(url_for("result",keyword=keyword))
     
-@app.route("/result/<keyword>")
+@app.route("/result/<keyword>", methods = ["GET","POST"])
 def result(keyword):
   keyword = keyword.split(",")
   #compare function
@@ -38,10 +38,6 @@ def result(keyword):
 def display(id):
   recipe_details = Recipe.objects.with_id(id)
   return render_template("recipie.html",recipe_details=recipe_details)
-
-@app.route("/result")
-def result_1():
-  return render_template("result_3.html")
-
+  
 if __name__ == '__main__':
   app.run(debug=True)

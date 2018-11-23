@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/recipe.css">
     <title>Recipie</title>
-    <link rel="stylesheet" href="../static/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    
 </head>
-
 <body>
-    {{recipe_details.ingredients_name}}
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-
-    </nav>
-    <div id="img1">
-        <img src="https://images.unsplash.com/photo-1504185945330-7a3ca1380535?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f2d35c4ea30a81e428e66c653748f91&auto=format&fit=crop&w=1842&q=80" alt="Burger King" width="200" height="200">
-        <p class="l1">
-            Burger
-        </p>
-    </div>    
-    <div id = "root">
-        <h3 class="space"><i>Nguyen lieu</i></h3>
-        <h3 style="border: 1px solid rgb(42, 161, 152)">sadasd</h3>
+    <div class="container">
+        <div class="topnav">
+            <a class="active" href="http://127.0.0.1:5000/"><h3>Cookids</h3></a>
+            <div class="search-container">
+                <form action="" method="POST">
+                    <input type="text" name="search" placeholder="Eg: Sữa ,chuối ,bơ ...">
+                    <button type="submit"><i class="fa fa-cutlery"></i></button>
+                </form>
+        </div>
+        <div class="title"><h1>{{recipe_details.recipe_name}}</h1></div>
+        <div class="description">
+            <div class="col-7" id=img>    
+                <img src= {{recipe_details.recipe_image}}>
+            </div>  
+            <div class="col-5">
+                <h3 class="space"><i>Nguyên Liệu :</i></h3>
+                <ol>
+                    {% for ing in recipe_details.ingredients %}
+                    <li> &nbsp; {{ ing["amount"] }} {{ ing["unit"]}} {{ ing["name"]}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <h3 class="space"> Công Thức </h3>
+        {% for item in recipe_details.steps %}
+        <ol>
+        <button class="accordion"> </button>
+            <div class="ingredients">
+                <div class="col-4">
+                    <img class="img3" src = {{ item["image"] }}  >
+                </div>
+                <div class="col-6">
+                    <h4 class="another">{{item["text"]}}</h4>    
+                </div>
+            </div>
+        </ol>
+        {% endfor %}
     </div>
-    <div>
-        <h3 class="space"><i> Cong thuc</i></h3>
-        <h4 class="line">Buoc 1</h4>
-
-        <h4 class="line">Buoc 2</h4>
-        <h4 class="line">Buoc 3</h4>
-        <h4 class="line">Buoc 4</h4>
-        <h4 class="line">Buoc 5</h4>
-    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>

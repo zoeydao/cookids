@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    background-color: black;
 }
 
 *{
@@ -40,7 +41,7 @@ h4 {
     align-items: center;
 }
 
-input    {
+input {
     width: 600px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -51,7 +52,7 @@ input    {
     background-position: 8px 5px;
     background-repeat: no-repeat;
     background-size: 30px;
-    padding: 12px 20px 12px 60px;
+    padding: 12px 20px 12px 50px;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
 }
@@ -69,14 +70,13 @@ button {
     background :#ddd;
     cursor: pointer;
     padding: 10PX;
-
 }
 
 .container {
     background: none;
     max-width: 600px;
     max-height: 500px;
-    /* margin: 10px ; */
+    margin: 10px ;
     padding: 10px;
     display: flex;
     justify-content: flex-start;

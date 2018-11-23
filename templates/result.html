@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet"> 
+    <link rel="stylesheet" href="../static/result.css">
+    <title>Cookids</title>
+</head>
+<body>
+<div class="root">
+    <div class="title">
+        <h1> Result </h1>
+    </div>
+    <div class="tools">
+        <select name="tool_a" >
+            <p> Acuracy: </p>
+            <option value="95%">Cao</option>
+            <option value="75%">Trung bình</option>
+            <option value="50%">Thấp</option>
+        </select>
+        <select class="tool_b" >
+            <p> Time: </p>
+            <option value="95%">Lâu</option>
+            <option value="75%">Trung bình</option>
+            <option value="50%">Nhanh</option>
+        </select>
+        <select name="tool_c" >
+            <p> Level </p>
+                <option value="95%">Khó</option>
+                <option value="75%">Trung bình</option>
+                <option value="50%">Dễ</option>
+        </select>
+    </div>
+    {% for recipe in recipe_documents %}
+    <div class="items">
+    <div class="name">
+        <p>{{ recipe.recipe_name }}</p>
+    </div>
+    <div class="img">
+            <img name="image" src={{recipe.recipe_image}} alt="" >
+    </div>
+    <div class="step">
+        <p> Duration {{ recipe.duration }}</p>
+        <p> Lever {{ recipe.lever }} </p>   
+        <p> Ingredients {{ recipe.ingredient_count }} </p>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>

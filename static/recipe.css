@@ -1,10 +1,11 @@
-body {
+body, html {
     background-image: url("https://images.pexels.com/photos/296884/pexels-photo-296884.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
     background-size: 100%;
     background-repeat: repeat-y;
 }
 
-*{
+* {
+    color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -67,7 +68,6 @@ i{
     background: #ccc;
 }
 
-
 .title {
     width: 95%;
     height: 200px;
@@ -77,60 +77,69 @@ i{
     align-items: center;
 }
 
-H1 {
-    color: white;
-}
-
-#name {
-    height: 30px;
-    float: left;
-    font-weight: bold;
-    color: #f1f1f1;
-}
-
-.item {
+.description{
     margin: 20px 20px 50px 20px;
-    height: 300px;
+    height: 500px;
     width: 100%;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #f1f1f1;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4);
+    flex-wrap: wrap;     
 }
 
-h3{
-    color: #f1f1f1;
-}
 
-img {   
-    height: 300px;
+.col-7 img{
+    height: 80%;
     width: 100%;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 10px; 
 }
 
-.col-7 {
+.col-5{
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0, 0.4); 
-    color: white;
-    font-weight: bold;
-    height: 300px;
-    width: 800px;
+    border: 1px solid  rgba(0,0,0, 0.4);;
+    border-radius: 10px;
+    height: 80%;
+} 
+
+.space {
+    font-size: 30px;
+}
+
+.ingredients{
     display: flex;
-    flex-flow: column;
-    justify-content: space-around;
-    padding-left: 15px;
-    padding-right: 15px;
+    flex-flow: wrap;
 }
 
-
-.Ingredients {
-    display:flex;
-    flex-direction:column;
-    justify-content: space-around;
+.another {
+    height: 80%;
+    width: 100%;
+    float: left; 
+    margin: 1px;
+    background-color: rgba(0,0,0, 0.4); 
+    border: 1px solid  rgba(0,0,0, 0.4);;
+    border-radius: 40px;
+    padding: 10px 10px;
+}
+.img3{
+    height: 80%;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10px; 
+}
     
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}   
