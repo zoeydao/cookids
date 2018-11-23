@@ -5,7 +5,7 @@ body {
 }
 
 *{
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -45,6 +45,8 @@ H1 {
     align-items: center;
     font-weight: bold;
     color: #f1f1f1;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4);
 }
 
 h3{
@@ -57,15 +59,24 @@ img {
 }
 
 .content {
+    display:flex;
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
     height: 300px;
     width: 800px;
-    margin-left: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.Ingredients {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    
 }

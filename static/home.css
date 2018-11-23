@@ -3,7 +3,7 @@ html, body {
 }
 
 *{
-    font-family: 'Ranga', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -18,9 +18,12 @@ html, body {
     background-size: 100% 100%;
 }
 
-h1 {
+.title {
     color: aliceblue;
     height: 20PX;
+    display:flex;
+    flex-flow:column;
+    margin-bottom: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -28,27 +31,33 @@ h1 {
 h3 {
     color: aliceblue;
     height: 20px;
+    margin-bottom: 100px;    
+}
+h4 {
+    color: aliceblue;
+    height: 20px;
     justify-content: center;
     align-items: center;
 }
 
 input    {
-    width: 400px;
+    width: 600px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
     background-color: white;
-    background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjt_5HTkOXeAhUCebwKHRdKAysQjRx6BAgBEAU&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F3498393%2Fcutlery_dish_with_fork_knife_plate_restaurant_spoon_icon&psig=AOvVaw2xtHbRBrvYQw7e9VcF0Lsk&ust=1542877384604914") ;
-    background-position: 10px 10px;
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png) ;
+    background-position: 8px 5px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    background-size: 30px;
+    padding: 12px 20px 12px 60px;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
 }
 
 input[type=text]:focus {
-    width: 600PX;
+    width:300px;
 }
 
 button {
@@ -65,8 +74,8 @@ button {
 
 .container {
     background: none;
-    max-width: 900px;
-    max-height: 300px;
+    max-width: 600px;
+    max-height: 500px;
     /* margin: 10px ; */
     padding: 10px;
     display: flex;
@@ -74,12 +83,24 @@ button {
 }
 
 .item {
-    margin: 5px;
-    height: 15px;
+    background-color: rgb(255, 255, 255,0.3);
+    margin: 20px;
+    height: 25px;
     text-align: center;
-    line-height: 15px;
+    line-height: 25px;
     width: 80px;
-    color: #ccc;
+    color: aliceblue;
     border: 1px solid white;
     border-radius: 5px;
+    font-weight:bold;
+}   
+ a {
+    color: aliceblue;
+}
+
+.mostsearch{
+    color: aliceblue;
+    font-weight:bold;
+    margin-top: 40px;
+    text-align:center;
 }

@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/home.css">
     <title>Home page</title>
 </head>
 <body>
     <div id="root">
-        <h1 style="font-size:50px"> COOKID </h1>
-        <h3> Eazily find recipe from your materials  </h3>
+        <div class="title">
+            <h1 style="font-size:70px"> COOKIDS </h1>
+            
+        </div>
+        <h3>Everyone can cook!</h3>
+        <h4> Hãy nhập những nguyên liệu bạn có để tìm công thức nấu ăn phù hợp!</h4>
         <form action="" method="POST">
             <div class="search_bar">
-                <input type="search" name="search" placeholder="Eg: Sữa ,chuối ,bơ ...">
+                <input type="search" name="search" placeholder="Eg: Sữa, chuối, bơ ...">
             </div>
+            <div class="mostsearch">Top 5 nguyên liệu được tìm kiếm nhiều nhất</div>
             <div class="container">
-                <div class="item item1"><a href="http://127.0.0.1:5000/result/thịt bò">Thịt bò</a></div>
-                <div class="item item2"><a href="http://127.0.0.1:5000/result/bột mì">Bột mỳ</a></div>
-                <div class="item item3"><a href="http://127.0.0.1:5000/result/phô mai">Phô mai</a></div>
+                {% for item in top_5 %}
+                <div class="item item1"><a href="/result/{{ item }}">  {{ item }} </a></div>
+                {% endfor %}
             </div>
         </form>
     </div>
