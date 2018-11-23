@@ -62,17 +62,17 @@ input[type=text]:focus {
     cursor: pointer;
     padding: 10PX;
 
-}
+/* }
 
 .container {
     background: none;
     max-width: 900px;
     max-height: 300px;
     /* margin: 10px ; */
-    padding: 10px;
+    /* padding: 10px;
     display: flex;
     justify-content: flex-start;
-}
+} */ 
 
 .item {
     margin: 5px;
@@ -83,4 +83,4 @@ input[type=text]:focus {
     color: #ccc;
     border: 1px solid white;
     border-radius: 5px;
-} */
+} 

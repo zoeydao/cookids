@@ -29,14 +29,14 @@
             <h1> Result </h1>
         </div>
         {% for recipe in recipe_documents %}
+        <div id="name">
+            <a href="{{ url_for('display',id=recipe.id) }}"><h3>{{ recipe.recipe_name }}</h3> </a>
+        </div>
         <div class="item">
-            <div class="col-2" id="name">
-                <a href="{{ url_for('display',id=recipe.id) }}"><h3>{{ recipe.recipe_name }}</h3> </a>
+            <div class="col-5" id="img">
+                <a href="{{ url_for('display',id=recipe.id) }}"><img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}"></a>
             </div>
-            <div class="col-6" id="img">
-                <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
-            </div>
-            <div class="col-4">
+            <div class="col-7">
                 <p> Duration : {{ recipe.duration }}</p>
                 <p> Level : {{ recipe.level }}</p>
                 <p> Quantity : {{ recipe.ingredient_count }}</p>

@@ -9,20 +9,45 @@
     <title>Cookids</title>
 </head>
 <body>
-    <div id = "root">
-        <select name="choice" >
-            Độ chính xác:<br>
+<div class="root">
+    <div class="title">
+        <h1> Result </h1>
+    </div>
+    <div class="tools">
+        <select name="tool_a" >
+            <p> Acuracy: </p>
             <option value="95%">Cao</option>
             <option value="75%">Trung bình</option>
             <option value="50%">Thấp</option>
         </select>
+        <select class="tool_b" >
+            <p> Time: </p>
+            <option value="95%">Lâu</option>
+            <option value="75%">Trung bình</option>
+            <option value="50%">Nhanh</option>
+        </select>
+        <select name="tool_c" >
+            <p> Level </p>
+                <option value="95%">Khó</option>
+                <option value="75%">Trung bình</option>
+                <option value="50%">Dễ</option>
+        </select>
     </div>
-    <div class="result">
-            <span style="color:brown" >95%</span>
-            <img name="image" src="https://image.freepik.com/free-photo/white-empty-frame-over-the-colorful-vegetables-on-backdrop_23-2147885664.jpg" alt="" >
-            <p>
-                db
-            </p> 
+    {% for recipe in recipe_documents %}
+    <div class="items">
+    <div class="name">
+        <p>{{ recipe.recipe_name }}</p>
     </div>
+    <div class="img">
+            <img name="image" src={{recipe.recipe_image}} alt="" >
+    </div>
+    <div class="step">
+        <p> Duration {{ recipe.duration }}</p>
+        <p> Lever {{ recipe.lever }} </p>   
+        <p> Ingredients {{ recipe.ingredient_count }} </p>
+    </div>
+    </div>
+    {% endfor %}
+</div>
 </body>
 </html>
