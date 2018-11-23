@@ -31,23 +31,20 @@ body, html {
 #ing_r{
 
 }
-
 .another {
     font-family: 'Archivo', sans-serif;
-    height: 100px;
+    height: 50px;
     width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    margin: 2px;
-    border-bottom: 1px solid #ebebeb;
-    font-size: 20px;
+    margin: 1px;
+    border-bottom: 1px solid blanchedalmond;
 }
-
-.img3 {
-    width: 10cm;
+.img3{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 10cm;
 }
