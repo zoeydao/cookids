@@ -11,28 +11,30 @@
 </head>
 
 <body>
-    {{recipe_details.ingredients_name}}
-    <nav class="navbar navbar-fixed-top navbar-inverse">
 
-    </nav>
-    <div id="img1">
-        <img src="https://images.unsplash.com/photo-1504185945330-7a3ca1380535?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f2d35c4ea30a81e428e66c653748f91&auto=format&fit=crop&w=1842&q=80" alt="Burger King" width="200" height="200">
+    <div id=img>
+        <img class ="img2" src= {{recipe_details.recipe_image}}>
         <p class="l1">
-            Burger
+            {{recipe_details.recipe_name}}
         </p>
     </div>    
     <div id = "root">
-        <h3 class="space"><i>Nguyen lieu</i></h3>
-        <h3 style="border: 1px solid rgb(42, 161, 152)">sadasd</h3>
+        <h3 class="space"><i>Nguyên Liệu </i></h3>
+        <h3 style="border: 1px solid rgb(42, 161, 152)">
+            {% for ing in recipe_details.ingredients %}
+                <p>{{ ing["amount"] }} {{ ing["unit"]}} {{ ing["name"]}}</p>
+                
+            {% endfor %}
+        </h3>
     </div>
     <div>
-        <h3 class="space"><i> Cong thuc</i></h3>
-        <h4 class="line">Buoc 1</h4>
-
-        <h4 class="line">Buoc 2</h4>
-        <h4 class="line">Buoc 3</h4>
-        <h4 class="line">Buoc 4</h4>
-        <h4 class="line">Buoc 5</h4>
+        <h3 class="space"><i> Công Thức </i></h3>
+        {% for item in recipe_details.steps %}
+            <img src = {{ item["image"] }} width="300cm" >
+            <h4 class="line">{{item["text"]}}</h4>
+            
+        {% endfor %}
+            
     </div>
 </body>
 </html>
