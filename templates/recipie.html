@@ -39,15 +39,20 @@
                 </ol>
             </div>
         </div>
-        <div>
-            <h3 class="space"><i> Công Thức </i></h3>
-            <div>
-            {% for item in recipe_details.steps %}
+        <h3 class="space"> Công Thức </h3>
+        {% for item in recipe_details.steps %}
+        <ol>
+        <button class="accordion"> </button>
+            <div class="ingredients">
+                <div class="col-4">
                     <img class="img3" src = {{ item["image"] }}  >
+                </div>
+                <div class="col-6">
                     <h4 class="another">{{item["text"]}}</h4>    
+                </div>
             </div>
-            {% endfor %}
-        </div>
+        </ol>
+        {% endfor %}
     </div>
     <script>
         var acc = document.getElementsByClassName("accordion");
