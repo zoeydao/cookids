@@ -18,11 +18,17 @@ body {
     border-bottom: 1px solid #ebebeb;
 }
 
-.space {
-    border-bottom: 1px solid black;
+
+    
 
 }
 .space {
+    font-size: 2cm;
+    font-family: 'Lobster', cursive;
+    border-bottom: 1px dotted rgba(255, 0, 55, 0.356);
+}
+.another {
+    font-family: 'Archivo', sans-serif;
     background-color: black;
     height: 300px;
     width: 95%;
