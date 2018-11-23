@@ -25,13 +25,8 @@ def result(keyword):
     ingre = item.capitalize()
     for recipe in recipes:
       if ingre in recipe.ingredients_name:
-<<<<<<< HEAD
           recipe_documents.append(recipe)
   return render_template("result.html", recipe_documents = recipe_documents)
-=======
-        recipe_documents.append(recipe)
-  return render_template("result_3.html", recipe_documents = recipe_documents)
->>>>>>> 00ee07d1a6bdf16168257a63c325f668b1fa47c1
 
 @app.route("/<id>")
 def display(id):
