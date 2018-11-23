@@ -30,7 +30,7 @@ h1 {
     width: 20%;
     height: 90%;
     font-style: inherit;
-    color: aquamarine;
+    color: black;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -42,7 +42,7 @@ h1 {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     color: black;
     font: bold;
     margin-left: 8px;
