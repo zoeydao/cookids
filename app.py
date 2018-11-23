@@ -26,7 +26,7 @@ def result(keyword):
     for recipe in recipes:
       if ingre in recipe.ingredients_name:
           recipe_documents.append(recipe)
-  return render_template("result.html", recipe_documents = recipe_documents)
+  return render_template("result_3.html", recipe_documents = recipe_documents)
 
 @app.route("/<id>")
 def display(id):
