@@ -20,13 +20,15 @@
             {{recipe_details.recipe_name}}
         </p>
     </div>    
-    <div id = "root">
+    <div>
         <h3 class="space"><i>Nguyên Liệu </i></h3>
-        <h3 style="border: 1px solid rgb(42, 161, 152)">
-            {% for ing in recipe_details.ingredients %}
-                <p>{{ ing["amount"] }} {{ ing["unit"]}} {{ ing["name"]}}</p>
-            {% endfor %}
-        </h3>
+        <ol>
+            <h3 id="ing_r">
+                {% for ing in recipe_details.ingredients %}
+                    <li><p class="ing1">{{ ing["amount"] }} {{ ing["unit"]}} {{ ing["name"]}}</p></li>
+                {% endfor %}
+            </h3>
+        </ol>
     </div>
     <div>
         <h3 class="space"><i> Công Thức </i></h3>
