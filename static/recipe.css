@@ -86,7 +86,7 @@ i{
     align-items: center;
 }
 
-.description{
+.description {
     margin: 20px 20px 30px 20px;
     height: 500px;
     width: 100%;
@@ -115,40 +115,61 @@ i{
 }
 
 .ingredients{
-    width: 100%;
+    overflow: auto;
     display: none;
-    flex-flow: wrap;
+    clear:both;
+    margin-block-end: 0cm;
+
 }
 
 .another {
     height: 80%;
     width: 100%;
-    float: left; 
     margin: 1px;
     background-color: rgba(0,0,0, 0.4); 
     border: 1px solid  rgba(0,0,0, 0.4);;
     border-radius: 40px;
     padding: 10px 10px;
+    float: right;
 }
 .img3{
     height: 100%;
     width: 100%;
     border: 1px solid white;
     border-radius: 10px; 
+
+
 }
-    
+.active, .accordion:hover {
+    background-color: #527E6a;
+}
 .accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 10px;
+    width: 5%;
     border: none;
-    text-align: left;
     outline: none;
     font-size: 15px;
-    transition: 0.4s;
+    transition: background-color 0.1s linear;
 }
+.accordion:after {
+    content: "\f055";
+    font-family: "fontawesome";
+    font-size: 20px;
+    float: center;
+}
+.active:after {
+    content: "\f056";
+    font-family: "fontawesome";
+    font-size: 20px;
+    float: center;
+}
+button.accordion:hover, button.accordion.is-open {
+    background-color: #ddd; 
+}   
+
 
 .active, .accordion:hover {
     background-color: #ccc; 

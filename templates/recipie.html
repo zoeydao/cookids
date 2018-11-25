@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <div class="topnav">
-                <a class="active" href="http://127.0.0.1:5000/"><h3>Cookids</h3></a>
+                <a class="" href="http://127.0.0.1:5000/"><h3>Cookids</h3></a>
                 <div class="search-container">
                     <form action="" method="POST">
                         <input type="text" name="search" placeholder="Eg: Sữa ,chuối ,bơ ...">
@@ -43,15 +43,15 @@
         <h3 class="space"> Công Thức </h3>
         {% for item in recipe_details.steps %}
         <ol>
-        <button class="accordion"></button>
-            <div class="ingredients">
-                <div class="col-4">
-                    <img class="img3" src = {{ item["image"] }}  >
+            <button class="accordion"> {{step}} </button>
+                <div class="ingredients">
+                    <div class="col-4">
+                        <img class="img3" src = {{ item ["image"] }} >
+                    </div>
+                    <div class="col-6">
+                        <h4 class="another">{{item["text"]}}</h4> 
+                    </div>
                 </div>
-                <div class="col-6">
-                    <h4 class="another">{{item["text"]}}</h4>    
-                </div>
-            </div>
         </ol>
         {% endfor %}
     </div>
