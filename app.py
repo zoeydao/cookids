@@ -22,21 +22,17 @@ def recipefinder():
     
 @app.route("/result/<keyword>", methods = ["GET","POST"])
 def result(keyword):
-  if request.method == "GET":
-    keyword = keyword.split(",")
-    #compare function
-    recipes = Recipe.objects()
-    recipe_documents = []
-    for item in keyword:
-      ingre = item.capitalize()
-      for recipe in recipes:
-        if ingre in recipe.ingredients_name:
-          recipe_documents.append(recipe)
-    return render_template("result_3.html", recipe_documents = recipe_documents)
-  elif request.method == "POST":
-    form = request.form
-    keyword = form["search"]
-    return redirect(url_for("result",keyword=keyword))
+  keyword = keyword.split(",")
+  #compare function
+  recipes = Recipe.objects()
+  recipe_documents = []
+  for item in keyword:
+    ingre = item.capitalize()
+    for recipe in recipes:
+      for ingredients in recipe.ingredients_name:
+        if ingre in ingredients:
+          recipe_documents.append(recipe)     
+  return render_template("result_3.html", recipe_documents = recipe_documents)
 
 
 @app.route("/<id>", methods = ["GET","POST"])

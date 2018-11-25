@@ -1,10 +1,10 @@
-body, html {
+body {
     background-image: url("https://images.pexels.com/photos/296884/pexels-photo-296884.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
     background-size: 100%;
     background-repeat: repeat-y;
 }
 
-* {
+*{
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
@@ -23,6 +23,7 @@ body, html {
     background-color: rgba(0,0,0, 0.4);
   }
 .topnav a {
+    font-family: 'Dancing Script', cursive;
     float: left;
     display: block;
     color:  white;
@@ -73,9 +74,11 @@ i{
     height: 200px;
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
+
 .img {
     width: 30%;
     height: 100%;
@@ -84,7 +87,7 @@ i{
 }
 
 .description{
-    margin: 20px 20px 50px 20px;
+    margin: 20px 20px 30px 20px;
     height: 500px;
     width: 100%;
     display: flex;
@@ -112,7 +115,8 @@ i{
 }
 
 .ingredients{
-    display: flex;
+    width: 100%;
+    display: none;
     flex-flow: wrap;
 }
 
